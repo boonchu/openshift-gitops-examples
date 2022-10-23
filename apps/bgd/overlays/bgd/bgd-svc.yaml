@@ -7,10 +7,10 @@ metadata:
   namespace: bgd
 spec:
   type: NodePort
-  port:
-    targetPort: 8080
-  to:
-    nodePort: 31443
-    kind: Service
-    name: bgd
-    weight: 100
+  ports:
+    - port: 31443
+      targetPort: 8080
+      nodePort: 31443
+      name: bgd
+  selector:
+    app: bgd
